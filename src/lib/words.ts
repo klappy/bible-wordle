@@ -1,4 +1,4 @@
-import { WORDS } from '../constants/wordlist'
+import { WORDS } from '../constants/wordlistULT'
 import { VALIDGUESSES } from '../constants/validGuesses'
 
 export const isWordInWordList = (word: string) => {
