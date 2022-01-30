@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bible Wordle",
+  "name": "Bible Wordle using words from the ULT",
   "icons": [
     {
       "src": "favicon.ico",
