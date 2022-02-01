@@ -1,6 +1,6 @@
 {
   "short_name": "Bible Wordle",
-  "name": "Bible Wordle using words from the ULT",
+  "name": "A Wordle clone using words from the uW English ULT translation.",
   "icons": [
     {
       "src": "favicon.ico",
