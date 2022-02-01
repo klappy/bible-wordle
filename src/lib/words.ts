@@ -21,16 +21,20 @@ export const getWordOfDay = () => {
   const nextday = (index + 1) * msInDay + epochMs;
 
   const wordsLength = WORDS.length;
-  const yearOffset = new Date().getFullYear() - 2022;
-  const daysOfYear = 365; // TODO: offset for leapyear.
-  const dayOffset = Math.round(wordsLength/daysOfYear);
-
+  const currentDate = new Date().valueOf();
+  const currentYear = new Date().getFullYear();
+  const yearOffset = currentYear - 2022;
+  const dateOfYearStart = new Date(currentYear, 0, 0).valueOf();
+  const timeSinceBeginningOfYear = currentDate - dateOfYearStart;
+  const dayOfTheYear = Math.floor( timeSinceBeginningOfYear / 1000 / 60 / 60 / 24 );
+  const daysInAYear = 365.25; // offset for leapyear.
+  const dayOffset = Math.round(wordsLength/daysInAYear);
   // Want the day of the year to be proportionate to the ratio of the wordlist, beginning vs end of each.
-  const wordlistIndex = dayOffset + dayOffset + yearOffset;
+  const wordIndex = dayOfTheYear + dayOffset + yearOffset;
 
   return {
-    solution: WORDS[wordlistIndex].toUpperCase(),
-    solutionIndex: wordlistIndex,
+    solution: WORDS[wordIndex%wordsLength].toUpperCase(),
+    solutionIndex: wordIndex,
     tomorrow: nextday,
   };
 };
