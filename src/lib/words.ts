@@ -28,7 +28,7 @@ export const getWordOfDay = () => {
   const daysInAYear = 365.25; // offset for leapyear.
   const dayOffset = Math.round(wordsLength/daysInAYear);
   // Want the day of the year to be proportionate to the ratio of the wordlist, beginning vs end of each.
-  const wordIndex = dayOfTheYear + dayOffset + yearOffset;
+  const wordIndex = (dayOfTheYear * dayOffset) + yearOffset;
 
   return {
     solution: WORDS[wordIndex%wordsLength].toUpperCase(),
