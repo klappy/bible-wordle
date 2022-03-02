@@ -118,10 +118,10 @@ function App() {
           <img
             src="./logo192.png"
             alt="logo"
-            style={{ width: '50px', display: 'inline' }}
+            style={{ width: '50px', display: 'inline', marginRight: '-2px' }}
           />
           <span style={{ fontFamily: 'Avenir', fontSize: '1.2em' }}>
-            <span style={{ fontWeight: 300 }}>unfolding</span>
+            <span style={{ fontWeight: 400 }}>unfolding</span>
             <span style={{ color: '#31ADE3' }}>Word</span>le
           </span>
         </h1>
