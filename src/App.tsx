@@ -114,7 +114,17 @@ function App() {
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-xl grow font-bold">Bible Wordle</h1>
+        <h1 className="text-xl grow font-bold">
+          <img
+            src="./logo192.png"
+            alt="logo"
+            style={{ width: '50px', display: 'inline' }}
+          />
+          <span style={{ fontFamily: 'Avenir', fontSize: '1.2em' }}>
+            <span style={{ fontWeight: 300 }}>unfolding</span>
+            <span style={{ color: '#31ADE3' }}>Word</span>le
+          </span>
+        </h1>
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
