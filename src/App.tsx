@@ -14,7 +14,7 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
-import { relative } from 'path/posix'
+// import { relative } from 'path/posix'
 
 const ALERT_TIME_MS = 2000
 
