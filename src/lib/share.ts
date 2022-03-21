@@ -3,7 +3,7 @@ import { solutionIndex } from './words'
 
 export const shareStatus = (guesses: string[], lost: boolean) => {
   navigator.clipboard.writeText(
-    `unfoldingWordle ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
+    `unfoldingWordle.org ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
       generateEmojiGrid(guesses)
   )
 }
