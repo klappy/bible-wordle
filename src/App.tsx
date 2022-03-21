@@ -14,6 +14,7 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
+import { relative } from 'path/posix'
 
 const ALERT_TIME_MS = 2000
 
@@ -114,17 +115,47 @@ function App() {
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-xl grow font-bold">
-          <img
-            src="./logo192.png"
-            alt="logo"
-            style={{ width: '50px', display: 'inline', marginRight: '-2px' }}
-          />
-          <span style={{ fontFamily: 'Avenir', fontSize: '1.2em' }}>
-            <span style={{ fontWeight: 400 }}>unfolding</span>
-            <span style={{ color: '#31ADE3' }}>Word</span>le
-          </span>
-        </h1>
+        <div className="grow" style={{ fontFamily: 'Avenir' }}>
+          <a
+            href="https://www.unfoldingword.org"
+            className=""
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./logo192.png"
+              alt="logo"
+              style={{
+                width: '50px',
+                display: 'inline',
+                marginRight: '-2px',
+                float: 'left',
+              }}
+            />
+            <h1 className="text-xl font-bold">
+              <span style={{ fontSize: '1.2em' }}>
+                <span style={{ fontWeight: 400 }}>unfolding</span>
+                <span style={{ color: '#31ADE3' }}>Word</span>le
+                <span
+                  style={{
+                    fontWeight: 100,
+                    fontSize: '0.5em',
+                    position: 'relative',
+                    top: '-1em',
+                  }}
+                >
+                  ™
+                </span>
+              </span>
+            </h1>
+          </a>
+          <p
+            className="text-sm italic tracking-wider grow"
+            style={{ fontSize: '0.91em' }}
+          >
+            A Daily Bible Word Game
+          </p>
+        </div>
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
