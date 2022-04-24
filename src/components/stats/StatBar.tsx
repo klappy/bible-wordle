@@ -13,7 +13,7 @@ const StatItem = ({
 }) => {
   return (
     <div className="items-center justify-center m-1">
-      <div className="text-lg font-bold">{value}</div>
+      <div className="text-md font-bold">{value}</div>
       <div className="text-xs">{label}</div>
     </div>
   )
