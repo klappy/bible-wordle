@@ -8,7 +8,7 @@ export const shareStatus = (guesses: string[], lost: boolean, gameStats: GameSta
 
   navigator.clipboard.writeText(
     `unfoldingWordle.org\n` +
-    `📖 ${solutionIndex} ${lost ? '❌' : `✅ ${guesses.length}`}/6 🔥${currentStreak}\n` +
+    `📖 ${solutionIndex} ${lost ? '❌' : `✅ ${guesses.length}`}/6 🔥${currentStreak}\n` +
     `🏆${gamesWon}/${totalGames}=${successRate}% 🌟${bestStreak}\n` +
     generateEmojiGrid(guesses)
   )
