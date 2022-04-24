@@ -7,8 +7,8 @@ export const shareStatus = (guesses: string[], lost: boolean, gameStats: GameSta
   const gamesWon = totalGames - gamesFailed;
 
   navigator.clipboard.writeText(
-    `📖:unfoldingWordle.org ${solutionIndex} ${lost ? '❌' : `✅:${guesses.length}`}/6\n` +
-    `🏆:${gamesWon}/${totalGames}=${successRate}% | 🔥:${currentStreak} | 🌟:${bestStreak}\n` +
+    `📖unfoldingWordle.org ${solutionIndex} ${lost ? '❌' : `✅${guesses.length}`}/6\n` +
+    `🏆${gamesWon}/${totalGames}=${successRate}% 🔥${currentStreak} 🌟${bestStreak}\n` +
     generateEmojiGrid(guesses)
   )
 }
