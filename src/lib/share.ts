@@ -1,10 +1,15 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
+import { GameStats } from './localStorage'
 
-export const shareStatus = (guesses: string[], lost: boolean) => {
+export const shareStatus = (guesses: string[], lost: boolean, gameStats: GameStats) => {
+  const { gamesFailed, totalGames, successRate, currentStreak, bestStreak } = gameStats;
+  const gamesWon = totalGames - gamesFailed;
+
   navigator.clipboard.writeText(
-    `unfoldingWordle.org ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
-      generateEmojiGrid(guesses)
+    `📖:unfoldingWordle.org ${solutionIndex} ${lost ? '❌' : `✅:${guesses.length}`}/6\n` +
+    `🏆:${gamesWon}/${totalGames}=${successRate}% | 🔥:${currentStreak} | 🌟:${bestStreak}\n` +
+    generateEmojiGrid(guesses)
   )
 }
 
