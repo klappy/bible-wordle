@@ -12,8 +12,8 @@ const StatItem = ({
   value: string | number
 }) => {
   return (
-    <div className="items-center justify-center m-1 w-1/4">
-      <div className="text-lg font-bold">{value}</div>
+    <div className="items-center justify-center m-1">
+      <div className="text-xl font-bold">{value}</div>
       <div className="text-xs">{label}</div>
     </div>
   )
